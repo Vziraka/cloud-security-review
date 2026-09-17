@@ -12,6 +12,7 @@ cutoff of 2026-09-01 09:00 UTC; this review does not represent live AWS state.
 | Report review | Six findings cross-referenced to configuration, control scope and activity where available | No extra evidence files behind CSV references were supplied |
 | Technical constraint review | AWS documentation consulted for root protection, GuardDuty, IAM simulation, RDS encryption and CloudTrail validation | Recommendations are not executed changes |
 | Personal-answer grounding | Supplied resume read through the authorized Chrome session | Resume statements were not independently verified; missing past outcomes are not invented |
+| Publication review | Eight-file allowlist, all historical paths, local Markdown links, Python syntax, whitespace and common credential-pattern checks passed | Pattern checks are not a comprehensive secret scanner; source datasets and resume are absent from the repository |
 
 The tests deliberately mutate **disposable local input copies** to confirm that
 the verifier rejects changes. These are explicit tests, not fabricated mistakes
@@ -31,6 +32,10 @@ b1206b0524e95b00b355687e4c9305967e8289cb1596e417924f33c41454d557
 cloud_activity_events.jsonl
 0d723d844adc971d960c8b2b3f37db4d6534a3dd44900c1b2cafb7924f4d28f0
 ```
+
+The source repository's `master` reference resolved during review to
+`dabb84f5753dec9e19f6266371b28a9ebdd25787`. The byte fingerprints above identify
+the actual inputs used; the scripts do not require network access to that revision.
 
 Fingerprints identify local inputs; they do not independently authenticate their
 origin. Newline conversion changes these hashes without necessarily changing

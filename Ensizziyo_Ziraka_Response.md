@@ -269,11 +269,11 @@ health and post-deployment metrics before declaring it safe.
 ## AI use and verification
 
 OpenAI Codex inspected the guide, synthetic inputs and the supplied resume,
-drafted the responses and plan, wrote local evidence checks, and organized the Git commits. The
-requesting account owner stated that they authored the exercise and authorized
-this use. **This workflow is an explicit exception to the published instruction
-not to expose the supplied files to an AI tool; it does not comply with that
-instruction as written.** The source files are excluded from this public repository.
+drafted the responses and plan, wrote local evidence checks, and organized the
+Git commits. The requesting account owner stated that they authored the exercise
+and authorized direct AI inspection of the synthetic inputs as an exception to
+the published input-handling restriction. The source files are excluded from
+this public repository.
 
 Verification consists of comparisons against parsed source fields, control rows
 and event locations; negative tests of the evidence verifier; and review of

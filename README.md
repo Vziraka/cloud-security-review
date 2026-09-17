@@ -41,4 +41,4 @@ inspection of its synthetic data. The [disclosure](Ensizziyo_Ziraka_Response.md#
 records this exception to the published AI-data restriction and how outputs were
 checked. Resume-based statements are distinguished from proposed methods where
 the source does not establish a specific past result. Git history reflects actual
-stages of work; no mistakes or experience were invented.
+stages of work.
