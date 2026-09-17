@@ -110,3 +110,19 @@ Added measurable change-acceptance requirements to the remediation plan: agreed
 baselines and thresholds, full-cycle job validation, timed alert acknowledgement,
 data reconciliation, and approved RPO/RTO. Also made evidence-quality failures a
 barrier to finding closure. Final publication review remains scheduled for stage 5.
+
+Stage 4 completed at 21:05:22 UTC in commit `a476af0`.
+
+### Stage 5 — Publication review
+
+Started at 21:15:59 UTC. Checked the nine-file publication allowlist, all historical
+Git paths, local Markdown link targets, Python syntax, common credential patterns
+and whitespace. Confirmed six finding sections and five technical answers; the
+technical-answer section is unchanged from the pre-redo baseline. The working
+tree was clean at the start of the review.
+
+Updated the verification record to include the ninth file and timed fault exercise,
+and linked this review from the README. Reviewed actual commit timestamps for the
+completed stages. Raw datasets, local fault copies, resume and checkpoint are
+absent from Git history. Final ZIP regeneration and remote verification remain
+scheduled for 21:25 UTC or the first wake-up thereafter.

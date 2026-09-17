@@ -12,7 +12,9 @@ cutoff of 2026-09-01 09:00 UTC; this review does not represent live AWS state.
 | Report review | Six findings cross-referenced to configuration, control scope and activity where available | No extra evidence files behind CSV references were supplied |
 | Technical constraint review | AWS documentation consulted for root protection, GuardDuty, IAM simulation, RDS encryption and CloudTrail validation | Recommendations are not executed changes |
 | Personal-answer grounding | Supplied resume read through the authorized Chrome session | Resume statements were not independently verified; missing past outcomes are not invented |
-| Publication review | Eight-file allowlist, all historical paths, local Markdown links, Python syntax, whitespace and common credential-pattern checks passed | Pattern checks are not a comprehensive secret scanner; source datasets and resume are absent from the repository |
+| Publication review | Nine-file allowlist including timed review, all historical paths, local Markdown links, Python syntax, whitespace and common credential-pattern checks passed | Pattern checks are not a comprehensive secret scanner; source datasets and resume are absent from the repository |
+| Timed fault exercise | Altered MFA fact rejected with exit 1; duplicate control rejected with exit 2; both restored copies then matched 68/68 with exit 0 | Deliberately altered local copies only; no live remediation |
+| Resume-answer preservation | All five technical answers match the pre-redo baseline | Assigned background preserved; not independently authenticated |
 
 The tests deliberately mutate **disposable local input copies** to confirm that
 the verifier rejects changes. These are explicit tests, not fabricated mistakes

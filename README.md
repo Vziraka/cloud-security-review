@@ -16,6 +16,9 @@ their limits. [Work notes](WORK_NOTES.md) record review decisions. No fix has be
 applied to an AWS account. The source data and original resume are not included;
 selected synthetic facts are cited to make the reasoning reviewable.
 
+The [timed second-pass review](TIMED_REVIEW.md) records scheduled stages, actual
+execution times, editorial refinements and the deliberate fault/correction exercise.
+
 ## Reproduce the factual checks
 
 Python 3.10+ and its standard library are sufficient. Obtain the three exercise
