@@ -70,3 +70,23 @@ Clarified the final disclosure so its verification limits do not contradict thos
 assigned-background statements. No unsupported past outcomes were added. Changes
 are editorial clarifications based on already reviewed evidence, not new AWS
 findings. Test-fault work remains scheduled for stage 3.
+
+Stage 2 completed at 20:30:27 UTC in commit `f2faba4`.
+
+### Stage 3 — Deliberate fault exercise
+
+Started at 20:46:59 UTC. Created two separate disposable local copies of the
+three source files outside the repository. These faults were deliberately
+introduced for testing; they are not accidental mistakes or changes in AWS.
+
+| Exercise fault | Expected behavior | Observed result | Diagnosis and next correction |
+| --- | --- | --- | --- |
+| Change E12's MFA flag to true in a copy | Reject the factual mismatch with exit 1 | 67/68 anchors matched; `MISMATCH: E12 mfa_used`; exit 1 | The altered sign-in fact no longer supports the report. Restore the original event bytes, not the verifier's expected value. |
+| Append a duplicate control row in another copy | Reject ambiguous control identity with exit 2 | Input error; exit 2 | Duplicate IDs could otherwise overwrite evidence during dictionary construction. Restore the original CSV and retain the uniqueness check. |
+
+Compared all original source bytes before and after the exercise: unchanged.
+Faulty copies and detailed command logs remain only in the local work directory
+for stage 4. No input copies are committed. The second error message is generic
+by design; the known injection identifies the duplicate-ID cause in this test.
+Neither result certifies live account security, and no report conclusions were
+rewritten to accommodate deliberately false input.
