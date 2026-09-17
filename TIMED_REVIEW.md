@@ -24,4 +24,32 @@ will not be backdated. No live AWS changes are authorized by this exercise.
 ## Execution record
 
 Scheduling setup: inspected repository status and existing scope notes; preserved
-the clean baseline at commit `8ff1e5b`. Stage work remains pending.
+the clean baseline at commit `8ff1e5b`.
+
+### Stage 1 — Requirements and evidence review
+
+Started at 20:12:28 UTC, on the first scheduled wake-up after the 20:10 target.
+Re-read the local challenge guide, all three source files, the main response and
+the remediation plan. No source data or resume was added to Git.
+
+| Requirement | Existing coverage | Second-pass review focus |
+| --- | --- | --- |
+| Five brief technical answers | Main response, Technical questions | Preserve resume-based background; distinguish recorded experience from proposed validation. |
+| Review all three inputs together | F1–F6 use snapshot paths, control IDs and event references | Add a compact cross-source matrix so the relationships are easier to scan. |
+| Prioritize material risks | Immediate root investigation, public RDP/runtime privilege and disabled detection precede scheduled corrections | Explain why the database migration is planned while containment starts immediately. |
+| Separate facts from hypotheses | Each finding has confirmed observations and uncertainty | Tighten F2 title so network configuration is not mistaken for a verified listening RDP service. |
+| Practical remediation with owners | Remediation table and database rollback gate | Make closure criteria distinguish incident escalation from actual incident resolution. |
+| AWS, monitoring and compliance validation | Plan covers fresh state, functional tests, alert delivery and refreshed evidence | Retain historical gaps and ensure current PASS is not represented as period-wide effectiveness. |
+| Assumptions and evidence requests | Seven owner questions and missing mutation-history caveat | Keep absent approvals and unprovided evidence attachments explicitly unresolved. |
+| AI disclosure and handling | Main response records owner-authorized input inspection | Preserve the actual workflow; no claim of unaided work. |
+| Readable named response and ZIP | Named Markdown response, public repository and earlier ZIP | Rebuild ZIP only after the scheduled final commit so it includes the redo. |
+
+The six existing findings remain supported by the supplied evidence. Review
+priorities are clarity and measurable closure, not inventing additional risks.
+Two wording issues are queued for stage 2: the F2 heading overstates verified
+reachability, and F1's closure table currently allows “escalated” to read as
+equivalent to resolved. Neither changes the underlying observed evidence.
+
+The 68-anchor verifier checks a fixed dataset, not corrected AWS posture. The
+later fault exercise must show mismatched inputs being rejected and restored
+reference inputs matching again; it must not call that a live remediation test.
