@@ -56,6 +56,20 @@ after the agreed retention and incident-preservation requirements are satisfied.
 
 ## Escalation and release gates
 
+Before each change, the service owner records the baseline, observation window,
+success thresholds and stop/rollback conditions in the change ticket. The supplied
+files do not define those thresholds, so they must be agreed rather than invented.
+For IAM, acceptance includes every required job in the agreed operational cycle
+and no unexplained new authorization failures. For alert routing, record the test
+event ID and send/receipt/acknowledgement times against the on-call response target.
+For the database, reconcile agreed row counts or checksums and application
+transactions, and measure restore/cutover against the approved RPO/RTO.
+
+Do not close a finding when evidence is malformed, duplicated, missing, outside
+the review period or drawn from a different resource. Resolve the collection issue
+and rerun the check. A matching historical export verifies a report's factual
+basis; only new post-change evidence can support remediation closure.
+
 Unexplained root activity remains with the incident lead until resolved; signs of
 persistence, log tampering or unauthorized data access expand investigation scope.
 Compliance labels alone do not determine whether an incident is reportable.

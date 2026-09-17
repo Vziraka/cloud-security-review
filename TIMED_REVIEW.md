@@ -90,3 +90,23 @@ for stage 4. No input copies are committed. The second error message is generic
 by design; the known injection identifies the duplicate-ID cause in this test.
 Neither result certifies live account security, and no report conclusions were
 rewritten to accommodate deliberately false input.
+
+Stage 3 completed at 20:47:56 UTC in commit `cdbd7d4`.
+
+### Stage 4 — Correction and validation
+
+Started at 21:04:29 UTC, the first scheduled wake-up after the 21:00 target.
+Restored the original event-file bytes in the MFA exercise and original CSV bytes
+in the duplicate-control exercise. Compared every file in both copies with the
+originals: all matched byte for byte. Each restored copy returned exit 0 with
+68/68 factual anchors matched. The existing eight regression checks also passed.
+
+No verifier expectation was weakened to accept altered evidence. The local test
+copies now contain the reference state; this is evidence-restoration testing,
+not a claim that the scenario's AWS risks were remediated. Detailed before/after
+test logs remain local.
+
+Added measurable change-acceptance requirements to the remediation plan: agreed
+baselines and thresholds, full-cycle job validation, timed alert acknowledgement,
+data reconciliation, and approved RPO/RTO. Also made evidence-quality failures a
+barrier to finding closure. Final publication review remains scheduled for stage 5.
