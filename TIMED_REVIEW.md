@@ -126,3 +126,20 @@ and linked this review from the README. Reviewed actual commit timestamps for th
 completed stages. Raw datasets, local fault copies, resume and checkpoint are
 absent from Git history. Final ZIP regeneration and remote verification remain
 scheduled for 21:25 UTC or the first wake-up thereafter.
+
+Stage 5 completed at 21:16:55 UTC in commit `f7e32a0`.
+
+### Final stage — Completed review and packaging
+
+Final stage began at 21:27:59 UTC on 2026-09-17, the first scheduled wake-up after
+the 21:25 target. The review reached its final stage about 78 minutes after the
+scheduled start. This is elapsed scheduled time, including idle intervals, not
+78 minutes of continuous work. Earlier submission history is preserved.
+
+The final evidence check again matched 68/68 anchors and the recorded source
+fingerprints. The eight regression checks passed in stage 4; executable code has
+not changed since. All planned review and deliberate fault/correction work is
+complete. The final package is generated from the commit containing this record;
+remote commit equality, public visibility and ZIP integrity are checked after
+publication, with the actual packaging completion time saved in the local
+checkpoint. No live AWS changes were made.
