@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env*
+data/
+work/
+aws_security_snapshot.json
+secureframe_control_status.csv
+cloud_activity_events.jsonl
+*.docx
+*.zip
