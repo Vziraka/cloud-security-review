@@ -17,6 +17,12 @@ Priorities are response targets proposed for this exercise: **P1** means act
 immediately or the same day; **P2** means assign an owner now and complete a
 scheduled correction. No confirmed breach is established by these materials.
 
+The database gap is serious, but the export shows private networking and enforced
+TLS, while correcting storage encryption requires a migration with availability
+and data-loss risks. Start its plan immediately while containing the exposed
+administrative path and investigating privileged activity. Evidence of active
+data access or compromise would change this ordering.
+
 ## Evidence notation
 
 - **S**: `aws_security_snapshot.json`; paths use zero-based JSON array indexes.
@@ -29,6 +35,15 @@ The local verifier checks selected factual anchors; it does not establish that
 the exports are authentic, exhaustive, or representative of the live account.
 
 ## Findings in priority order
+
+| Finding | Configuration evidence | Control evidence | Activity evidence and limit |
+| --- | --- | --- | --- |
+| F1 Root sign-in | Current root MFA configuration is not supplied | CC8.1 approval scope covers routine releases only | E12–E13 show root login without MFA and follow-up activity; authorization remains unknown |
+| F2 RDP and runtime privilege | World-open 3389 rule, public host routing, wildcard runtime policy | CC6.6 excludes app ingress; CC6.1 review is stale | E8/E11/E23 show telemetry use, not the full access requirement; no causative change event |
+| F3 Detection disabled | GuardDuty disabled; route still configured | CC7.2 FAIL / SEC-191 | No disabling event supplied; E24 corroborates separate CloudTrail collection |
+| F4 Database encryption | Storage unencrypted; DB private and SSL enforced | CC6.7 FAIL / SEC-193; A1.2/A1.3 address backup/restore | E14 describes a completed backup, not proof of encryption |
+| F5 Log integrity | Digest validation off; delivery active; destination uses AES256 | CC7.3 PASS explicitly excludes integrity | E10/E24 support delivery status, not tamper resistance |
+| F6 Access review | Broad runtime grant makes current approval especially important | CC6.1 FAIL / SEC-184; evidence ends April 30 | Workload activity cannot substitute for dated access approval |
 
 ### F1 — P1 — Unexplained root sign-in without MFA
 
@@ -54,7 +69,7 @@ regions. Avoid assuming a password reset invalidates every existing session.
 Use the incident process and AWS Support as needed to establish containment.
 [AWS root-user guidance](https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html).
 
-### F2 — P1 — Public RDP reaches a host with excessive runtime permissions
+### F2 — P1 — Public RDP rule on a host with excessive runtime permissions
 
 **Confirmed:** S `/security_groups/0/ingress_rules/1` allows TCP/3389 from
 `0.0.0.0/0`. Its attached running Windows host has a public IP, an internet-gateway
@@ -279,6 +294,7 @@ Verification consists of comparisons against parsed source fields, control rows
 and event locations; negative tests of the evidence verifier; and review of
 AWS documentation for remediation constraints. This verification was performed
 by Codex, not independently by a human or in a live AWS account. No live fix,
-incident resolution, audit acceptance, or personal work history is claimed.
+incident resolution or audit acceptance is claimed. Personal experience statements
+use the assigned resume background and have not been independently verified.
 See [verification](VERIFICATION.md) for executed checks and limitations, and
 [the change plan](REMEDIATION.md) for proposed post-change validation.

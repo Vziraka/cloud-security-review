@@ -53,3 +53,20 @@ equivalent to resolved. Neither changes the underlying observed evidence.
 The 68-anchor verifier checks a fixed dataset, not corrected AWS posture. The
 later fault exercise must show mismatched inputs being rejected and restored
 reference inputs matching again; it must not call that a live remediation test.
+
+Stage 1 completed at 20:13:21 UTC in commit `6a25fbb`.
+
+### Stage 2 — Findings and response refinement
+
+Started at 20:29:28 UTC, the first scheduled wake-up after the 20:25 target.
+Added a six-row configuration/control/activity matrix, clarified why database
+migration follows immediate containment, and corrected the RDP heading to describe
+the observed rule rather than imply a successful connection test. Updated root
+incident closure to require a documented disposition; escalation alone is no
+longer listed as closure evidence.
+
+Reviewed all five technical answers and retained their resume-based background.
+Clarified the final disclosure so its verification limits do not contradict those
+assigned-background statements. No unsupported past outcomes were added. Changes
+are editorial clarifications based on already reviewed evidence, not new AWS
+findings. Test-fault work remains scheduled for stage 3.
